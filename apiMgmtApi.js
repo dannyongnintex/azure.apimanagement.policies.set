@@ -29,7 +29,7 @@ class ApiMgmtApi {
         const result = await axios(options)
             // look up what axios considers http errors
             .catch(function (error) {
-                throw new Error(`error setting policy for api '${apiRef.name}'; error was: ${error.response.statusText}; body: ${JSON.stringify(error.response.body)}`);
+                throw new Error(`error setting policy for api '${apiRef.name}'; error was: ${error.response.statusText}; data: ${JSON.stringify(error.response.data)}`);
             });
 
         console.log(`set policy for api '${apiRef.name}' successfully`);
