@@ -30,7 +30,7 @@ class ApiMgmtApiOperation {
 
         const result = await axios(options)
             .catch(function (error) {
-                throw new Error(`error setting policy for operation '${operationRef.name}' of api '${apiRef.name}'; error was: ${error.response.statusText}`);
+                throw new Error(`error setting policy for operation '${operationRef.name}' of api '${apiRef.name}'; error was: ${error.response.statusText}; body: ${JSON.stringify(error.response.body)}`);
             });
 
         console.log(`set policy for operation '${operationRef.name}' of api '${apiRef.name}' successfully`);
